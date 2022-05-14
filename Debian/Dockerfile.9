@@ -1,0 +1,6 @@
+FROM debian:stretch
+RUN apt-get update && \
+  apt-get upgrade -y && \
+  apt-get install -y nano wget && \
+  apt-get clean
+CMD ["/bin/bash"]
