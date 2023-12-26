@@ -1,4 +1,11 @@
-all: pulls bullseye clean
+all: pulls bookworm clean
+
+bookworm:
+	cp Dockerfile.12 Dockerfile
+	docker build . -t ryht/debian:bookworm
+	docker tag ryht/debian:bookworm ryht/debian:12
+	docker push ryht/debian:bookworm
+	docker push ryht/debian:12
 
 bullseye:
 	cp Dockerfile.11 Dockerfile
@@ -32,6 +39,8 @@ clean:
 	rm Dockerfile
 
 pulls:
+	docker pull debian:sid
+	docker pull debian:bookworm
 	docker pull debian:bullseye
 	docker pull debian:buster
 	docker pull debian:stretch
