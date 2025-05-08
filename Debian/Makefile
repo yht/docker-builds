@@ -1,5 +1,7 @@
 all: pulls bookworm clean
 
+alls: pulls bookworm bullseye buster clean
+
 bookworm:
 	cp Dockerfile.12 Dockerfile
 	docker build . -t ryht/debian:bookworm
