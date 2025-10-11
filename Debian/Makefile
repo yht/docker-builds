@@ -1,6 +1,13 @@
-all: pulls bookworm clean
+all: pulls trixie clean
 
-alls: pulls bookworm bullseye buster clean
+alls: pulls trixie bookworm bullseye clean
+
+trixie:
+	cp Dockerfile.13 Dockerfile
+	docker build . -t ryht/debian:trixie
+	docker tag ryht/debian:trixie ryht/debian:13
+	docker push ryht/debian:trixie
+	docker push ryht/debian:13
 
 bookworm:
 	cp Dockerfile.12 Dockerfile
@@ -42,6 +49,7 @@ clean:
 
 pulls:
 	docker pull debian:sid
+	docker pull debian:trixie
 	docker pull debian:bookworm
 	docker pull debian:bullseye
 	docker pull debian:buster
