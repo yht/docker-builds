@@ -1,4 +1,4 @@
-FROM ryht/debian:bookworm
+FROM ryht/debian:13
 RUN apt-get update && apt-get upgrade -y && \
  apt-get install -y \
   git-core \
