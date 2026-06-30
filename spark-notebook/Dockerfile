@@ -1,4 +1,4 @@
-FROM jupyter/all-spark-notebook:spark-3.4.1
+FROM jupyter/all-spark-notebook:spark-3.3.2
 
 LABEL maintainer="Yudha H T"
 
