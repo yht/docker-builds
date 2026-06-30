@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/all-spark-notebook:python-3.11
+FROM quay.io/jupyter/all-spark-notebook:spark-3.5.1
 LABEL MAINTAINER="Yudha H T"
 
 USER root
